@@ -3,7 +3,7 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 const app = express();
-const port = process.env.PORT || 3000; // Define the port for your API
+const port = process.env.PORT || 3000; 
 
 const headers = {
   "User-Agent":
@@ -24,10 +24,9 @@ async function fetchEpisodes(baseUrl) {
           .siblings(".screen-item-info")
           .find("h3.sii-title")
           .text();
-        const imgSrc = $(element).find("img.sit-img").attr("src");
 
         if (href && href.includes("episodio")) {
-          itemLinks.push({ href, title, imgSrc });
+          itemLinks.push({ href, title });
         }
       });
 
@@ -64,8 +63,6 @@ app.get("/api/episodes", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
-
-
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
