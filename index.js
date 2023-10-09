@@ -1,12 +1,24 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
-const cors = require("cors"); 
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(cors()); 
+// Middleware de CORS personalizado
+const allowCors = (req, res, next) => {
+  res.setHeader("Access-Control-Allow-Credentials", true);
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,OPTIONS,PATCH,DELETE,POST,PUT");
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+  );
+  next();
+};
+
+// Use o middleware de CORS personalizado
+app.use(allowCors);
 
 const headers = {
   "User-Agent":
