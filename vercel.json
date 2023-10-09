@@ -8,6 +8,5 @@
   ],
   "routes": [
     { "src": "/api/episodes", "dest": "index.js" }
-  ],
-
+  ]
 }
