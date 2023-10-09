@@ -17,7 +17,6 @@ const allowCors = (req, res, next) => {
   next();
 };
 
-// Use o middleware de CORS personalizado
 app.use(allowCors);
 
 const headers = {
@@ -41,10 +40,9 @@ async function fetchEpisodes(baseUrl, pageNumber) {
           .siblings(".screen-item-info")
           .find("h3.sii-title")
           .text();
-        const imgSrc = $(element).find("img.sit-img").attr("src");
 
         if (href && href.includes("episodio")) {
-          itemLinks.push({ href, title, imgSrc });
+          itemLinks.push({ href, title });
         }
       });
 
