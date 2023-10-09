@@ -16,6 +16,7 @@ const headers = {
 async function fetchEpisodes(baseUrl, pageNumber) {
   const pageUrl = `${baseUrl}?page=${pageNumber}`;
   try {
+    console.log(`Buscando página ${pageNumber}: ${pageUrl}`);
     const response = await axios.get(pageUrl, { headers });
     if (response.status === 200) {
       const html = response.data;
@@ -41,9 +42,11 @@ async function fetchEpisodes(baseUrl, pageNumber) {
         return { pageNumber, data: itemLinks };
       }
     } else {
+      console.error(`Erro ao buscar página ${pageNumber}: Status ${response.status}`);
       return { pageNumber, error: `Error: ${response.status}` };
     }
   } catch (error) {
+    console.error(`Erro ao buscar página ${pageNumber}: ${error.message}`);
     return { pageNumber, error: `Error: ${error.message}` };
   }
 }
@@ -72,7 +75,8 @@ app.get("/api/episodes", async (req, res) => {
     }, []);
     res.json(allEpisodes);
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    console.error(`Erro interno do servidor: ${error.message}`);
+    res.status(500).json({ error: "Erro interno do servidor" });
   }
 });
 
