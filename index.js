@@ -1,9 +1,12 @@
 const express = require("express");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const cors = require("cors"); // Adicionamos o módulo CORS
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Usar a porta definida no ambiente ou 3000 por padrão
+
+app.use(cors()); // Habilitar CORS para todas as rotas
 
 const headers = {
   "User-Agent":
