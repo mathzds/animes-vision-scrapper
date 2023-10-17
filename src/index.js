@@ -79,7 +79,7 @@ router.get("/api/video", async (req, res) => {
   }
 });
 
-app.use("/", router); // Use "/" para lidar com outras rotas
+app.use("/api", router);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
