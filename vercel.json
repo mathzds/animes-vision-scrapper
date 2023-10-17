@@ -28,5 +28,4 @@
       "dest": "src/routes/search/search.js"
     }
   ],
-  "root": "src" 
 }
