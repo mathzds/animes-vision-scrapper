@@ -7,32 +7,32 @@
     }
   ],
   "routes": [
-    { 
-      "src": "/api/episodes", 
+    {
+      "src": "/api/episodes",
       "dest": "src/routes/episodes/episodes.js",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "*"
       }
     },
-    { 
-      "src": "/api/video", 
+    {
+      "src": "/api/video",
       "dest": "src/routes/watch/watch.js",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "*"
       }
     },
-    { 
-      "src": "/api/home", 
+    {
+      "src": "/api/home",
       "dest": "src/routes/home/home.js",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
       "headers": {
         "Access-Control-Allow-Origin": "*"
       }
     },
-    { 
-      "src": "/api/search", 
+    {
+      "src": "/api/search",
       "dest": "src/routes/search/search.js",
       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
       "headers": {
