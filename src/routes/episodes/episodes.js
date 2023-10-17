@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { fetchEpisodes } = require("../../services/episodes/episodesService");
 
-router.get("/api/episodes", async (req, res) => {
+router.get("/episodes", async (req, res) => {
   const baseUrl = req.query.url;
 
   if (!baseUrl) {

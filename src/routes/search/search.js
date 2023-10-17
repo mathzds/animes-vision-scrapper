@@ -4,7 +4,7 @@ const { performSearch } = require('../../services/search/searchService');
 
 const router = express.Router();
 
-router.get('/api/search', async (req, res) => {
+router.get('/search', async (req, res) => {
   try {
     const searchTerm = req.query.nome;
 

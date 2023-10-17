@@ -8,22 +8,22 @@
   ],
   "routes": [
     {
-      "src": "/api/episodes",
+      "src": "/episodes",
       "methods": ["GET", "POST"],
       "dest": "src/routes/episodes/episodes.js"
     },
     {
-      "src": "/api/video",
+      "src": "/video",
       "methods": ["GET"],
       "dest": "src/routes/watch/watch.js"
     },
     {
-      "src": "/api/home",
+      "src": "/home",
       "methods": ["GET"],
       "dest": "src/routes/home/home.js"
     },
     {
-      "src": "/api/search",
+      "src": "/search",
       "methods": ["GET"],
       "dest": "src/routes/search/search.js"
     }

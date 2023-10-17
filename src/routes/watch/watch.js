@@ -3,7 +3,7 @@ const { extractAniscDetail } = require('../../services/watch/watchService');
 
 const router = express.Router();
 
-router.get('/api/video', async (req, res) => {
+router.get('/video', async (req, res) => {
   try {
     const videoUrl = req.query.url;
 

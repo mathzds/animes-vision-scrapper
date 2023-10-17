@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { scrapeHomepage } = require("../../services/home/homeService");
 
-router.get("/api/home", async (req, res) => {
+router.get("/home", async (req, res) => {
   try {
     const result = await scrapeHomepage();
 
