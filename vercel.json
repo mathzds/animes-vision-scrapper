@@ -9,42 +9,61 @@
   "routes": [
     {
       "src": "/api/episodes",
-      "dest": "src/index.js",
-      "methods": ["GET"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "dest": "src/index.js"
     },
     {
       "src": "/api/home",
-      "dest": "src/index.js",
-      "methods": ["GET"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "dest": "src/index.js"
     },
     {
       "src": "/api/search",
-      "dest": "src/index.js",
-      "methods": ["GET"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "dest": "src/index.js"
     },
     {
       "src": "/api/video",
-      "dest": "src/index.js",
-      "methods": ["GET"],
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "dest": "src/index.js"
     },
     {
       "src": "/(.*)",
-      "dest": "src/index.js",
-      "headers": {
-        "Access-Control-Allow-Origin": "*"
-      }
+      "dest": "src/index.js"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/episodes",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/api/home",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/api/search",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/api/video",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
     }
   ]
 }
