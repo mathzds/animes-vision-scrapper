@@ -27,5 +27,5 @@
       "methods": ["GET"],
       "dest": "src/routes/search/search.js"
     }
-  ],
+  ]
 }
