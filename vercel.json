@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.js", 
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/episodes",
+      "dest": "/api/episodes"
+    },
+    {
+      "src": "/api/home",
+      "dest": "/api/home"
+    },
+    {
+      "src": "/api/search",
+      "dest": "/api/search"
+    },
+    {
+      "src": "/api/video",
+      "dest": "/api/video"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
