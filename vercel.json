@@ -2,34 +2,49 @@
   "version": 2,
   "builds": [
     {
-      "src": "src/index.js", 
+      "src": "src/index.js",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/api/episodes",
-      "dest": "src/index.js", 
-      "methods": ["GET"]
+      "dest": "src/index.js",
+      "methods": ["GET"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
     },
     {
       "src": "/api/home",
-      "dest": "src/index.js", 
-      "methods": ["GET"]
+      "dest": "src/index.js",
+      "methods": ["GET"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
     },
     {
       "src": "/api/search",
-      "dest": "src/index.js", 
-      "methods": ["GET"]
+      "dest": "src/index.js",
+      "methods": ["GET"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
     },
     {
       "src": "/api/video",
       "dest": "src/index.js",
-      "methods": ["GET"]
+      "methods": ["GET"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
     },
     {
       "src": "/(.*)",
-      "dest": "src/index.js" 
+      "dest": "src/index.js",
+      "headers": {
+        "Access-Control-Allow-Origin": "*"
+      }
     }
   ]
 }
