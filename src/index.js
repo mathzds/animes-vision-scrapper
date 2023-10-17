@@ -13,6 +13,7 @@ const errorHandler = (res, error) => {
 };
 
 router.get("/api/episodes", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
   const baseUrl = req.query.url;
 
   if (!baseUrl) {
@@ -34,6 +35,7 @@ router.get("/api/episodes", async (req, res) => {
 });
 
 router.get("/api/home", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); 
   try {
     const result = await homeService.scrapeHomepage();
 
@@ -48,6 +50,7 @@ router.get("/api/home", async (req, res) => {
 });
 
 router.get("/api/search", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); 
   try {
     const searchTerm = req.query.nome;
 
@@ -64,6 +67,7 @@ router.get("/api/search", async (req, res) => {
 });
 
 router.get("/api/video", async (req, res) => {
+  res.setHeader("Access-Control-Allow-Origin", "*"); 
   try {
     const videoUrl = req.query.url;
 
@@ -79,7 +83,7 @@ router.get("/api/video", async (req, res) => {
   }
 });
 
-app.use("/api", router);
+app.use("/", router); 
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
