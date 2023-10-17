@@ -12,7 +12,7 @@ const errorHandler = (res, error) => {
   res.status(500).json({ error: error.message });
 };
 
-router.get("/episodes", async (req, res) => {
+router.get("/api/episodes", async (req, res) => {
   const baseUrl = req.query.url;
 
   if (!baseUrl) {
@@ -33,7 +33,7 @@ router.get("/episodes", async (req, res) => {
   }
 });
 
-router.get("/home", async (req, res) => {
+router.get("/api/home", async (req, res) => {
   try {
     const result = await homeService.scrapeHomepage();
 
@@ -47,7 +47,7 @@ router.get("/home", async (req, res) => {
   }
 });
 
-router.get("/search", async (req, res) => {
+router.get("/api/search", async (req, res) => {
   try {
     const searchTerm = req.query.nome;
 
@@ -63,7 +63,7 @@ router.get("/search", async (req, res) => {
   }
 });
 
-router.get("/video", async (req, res) => {
+router.get("/api/video", async (req, res) => {
   try {
     const videoUrl = req.query.url;
 
@@ -79,7 +79,7 @@ router.get("/video", async (req, res) => {
   }
 });
 
-app.use("/api", router);
+app.use("/", router); // Use "/" para lidar com outras rotas
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
