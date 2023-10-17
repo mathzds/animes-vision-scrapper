@@ -1,3 +1,5 @@
+// Dependências
+// Ala, usa commonjs kkkkkkkkkkkkkkk
 const express = require("express");
 const { port } = require("./config/config");
 const app = express();
@@ -11,7 +13,7 @@ const watchService = require("./services/watch/watchService");
 const errorHandler = (res, error) => {
   res.status(500).json({ error: error.message });
 };
-
+// Rota episodes
 router.get("/episodes", async (req, res) => {
   const baseUrl = req.query.url;
 
@@ -32,7 +34,7 @@ router.get("/episodes", async (req, res) => {
     errorHandler(res, error);
   }
 });
-
+// Rota home
 router.get("/home", async (req, res) => {
   try {
     const result = await homeService.scrapeHomepage();
@@ -46,7 +48,7 @@ router.get("/home", async (req, res) => {
     errorHandler(res, error);
   }
 });
-
+// Rota search
 router.get("/search", async (req, res) => {
   try {
     const searchTerm = req.query.nome;
@@ -62,7 +64,7 @@ router.get("/search", async (req, res) => {
     errorHandler(res, error);
   }
 });
-
+// Rota vídeo
 router.get("/video", async (req, res) => {
   try {
     const videoUrl = req.query.url;
@@ -78,9 +80,9 @@ router.get("/video", async (req, res) => {
     errorHandler(res, error);
   }
 });
-
+// App
 app.use("/api", router);
-
+// Hostear
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
