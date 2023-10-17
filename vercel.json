@@ -7,26 +7,29 @@
     }
   ],
   "routes": [
-    { "handle": "filesystem" },
     {
       "src": "/api/episodes",
-      "dest": "/api/episodes"
+      "dest": "src/index.js", 
+      "methods": ["GET"]
     },
     {
       "src": "/api/home",
-      "dest": "/api/home"
+      "dest": "src/index.js", 
+      "methods": ["GET"]
     },
     {
       "src": "/api/search",
-      "dest": "/api/search"
+      "dest": "src/index.js", 
+      "methods": ["GET"]
     },
     {
       "src": "/api/video",
-      "dest": "/api/video"
+      "dest": "src/index.js",
+      "methods": ["GET"]
     },
     {
       "src": "/(.*)",
-      "dest": "src/index.js"
+      "dest": "src/index.js" 
     }
   ]
 }
