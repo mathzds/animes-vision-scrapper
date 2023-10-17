@@ -1,32 +1,32 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "src/index.js",
-        "use": "@now/node"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/episodes",
-        "methods": ["GET", "POST"],
-        "dest": "src/routes/episodes/episodes.js"
-      },
-      {
-        "src": "/api/video",
-        "methods": ["GET"],
-        "dest": "src/routes/watch/watch.js"
-      },
-      {
-        "src": "/api/home",
-        "methods": ["GET"],
-        "dest": "src/routes/home/home.js"
-      },
-      {
-        "src": "/api/search",
-        "methods": ["GET"],
-        "dest": "src/routes/search/search.js"
-      }
-    ]
-  }
-  
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/index.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/episodes",
+      "methods": ["GET", "POST"],
+      "dest": "src/routes/episodes/episodes.js"
+    },
+    {
+      "src": "/api/video",
+      "methods": ["GET"],
+      "dest": "src/routes/watch/watch.js"
+    },
+    {
+      "src": "/api/home",
+      "methods": ["GET"],
+      "dest": "src/routes/home/home.js"
+    },
+    {
+      "src": "/api/search",
+      "methods": ["GET"],
+      "dest": "src/routes/search/search.js"
+    }
+  ],
+  "root": "src" // Definindo a pasta "src" como a raiz do projeto
+}
