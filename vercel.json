@@ -28,5 +28,5 @@
       "dest": "src/routes/search/search.js"
     }
   ],
-  "root": "src" // Definindo a pasta "src" como a raiz do projeto
+  "root": "src" 
 }
