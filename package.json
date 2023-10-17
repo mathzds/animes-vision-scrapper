@@ -13,7 +13,8 @@
     "axios": "^1.5.1",
     "cheerio": "^1.0.0-rc.12",
     "express": "^4.18.2",
-    "puppeteer": "latest"
+    "puppeteer": "latest",
+    "puppeteer-core": "^21.3.8"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
